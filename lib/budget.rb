@@ -11,6 +11,7 @@ require "budget/version"
 require "budget/google_api"
 require "budget/calculator"
 require "budget/expense"
+require "budget/payday"
 
 module Budget
   def self.calculate
