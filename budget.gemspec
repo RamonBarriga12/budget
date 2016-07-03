@@ -22,4 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_dependency 'table_print'
   spec.add_dependency 'google-api-client'
+  spec.add_dependency 'thor'
 end

@@ -15,24 +15,18 @@ module Budget
 			response.map {|x| Expense.new(x) }
 		end
 
-		def list_expenses( expenses )
-			tp expenses
-		end
-
 		def current_expenses
 			current = Payday.current.to_date
 			nxt = Payday.next.to_date
 			expenses_for_range( current, nxt)
 		end
 
-		def expenses_for_range(current, nxt)
-			grab_expenses(4).select { |x| x.date >= current && x.date < nxt }
+		def current_amount
+			current_expenses.inject(0) {|total, expense| total + expense.amount }
 		end
 
-		def show_budget
-			puts "Current pay day: #{Payday.current}"
-			puts "Amount due: #{current_expenses.inject(0) {|total,expense| total + expense.amount}}"
-			list_expenses(current_expenses)
+		def expenses_for_range(current, nxt)
+			grab_expenses(4).select { |x| x.date >= current && x.date < nxt }
 		end
 
 	end

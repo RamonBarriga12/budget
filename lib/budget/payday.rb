@@ -35,6 +35,10 @@ module Budget
 			@date
 		end
 
+		def end_date
+			@date + 13
+		end
+
 	end
 
 end

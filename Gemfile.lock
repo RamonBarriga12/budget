@@ -4,6 +4,7 @@ PATH
     budget (0.0.1)
       google-api-client
       table_print
+      thor
 
 GEM
   remote: https://rubygems.org/
